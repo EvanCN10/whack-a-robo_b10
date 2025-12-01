@@ -21,7 +21,7 @@
 
 ## 📸 Screenshots
 
-> **Coming Soon** - Gameplay screenshots will be added here
+<img width="1033" height="778" alt="image" src="https://github.com/user-attachments/assets/4e21c5ea-b29a-459c-8790-391e6594c5b3" />
 
 | Feature | Preview |
 |---------|---------|
@@ -161,8 +161,6 @@ Replace `<username>`, `<password>`, `<cluster>`, and `<database-name>` with your
 
 #### Step 4: Run Both Servers
 
-**Option A: Run in Separate Terminals**
-
 Terminal 1 - Frontend:
 ```bash
 cd whack-a-mole
@@ -172,19 +170,11 @@ npm run dev
 Terminal 2 - Backend:
 ```bash
 cd whack-backend
-npm run dev
+npx ts-node index.ts
 ```
 
 The frontend will typically run on `http://localhost:5173`  
 The backend will run on `http://localhost:3001`
-
-**Option B: Run Concurrently (from root directory)**
-
-```bash
-npm run dev:all
-```
-
-*(Requires `concurrently` package installed in root `package.json`)*
 
 ---
 
@@ -279,6 +269,7 @@ All audio in Whack-a-Robo is procedurally generated using the **Web Audio API**.
 
 ```
 Final Project PemWeb/
+├── .gitignore
 ├── README.md (This file)
 ├── whack-a-mole/                 # Frontend Application
 │   ├── src/
@@ -311,34 +302,34 @@ Final Project PemWeb/
 ### Frontend Development
 
 ```bash
+# 1. Masuk ke folder frontend
 cd whack-a-mole
 
-# Start dev server with HMR
+# 2. Download semua library (React, Tailwind, dll)
+npm install
+
+# 3. Nyalakan Website (Port 5173)
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Run linter
-npm run lint
 ```
 
 ### Backend Development
 
 ```bash
+# 1. Masuk ke folder backend
 cd whack-backend
 
-# Start dev server with auto-reload
-npm run dev
+# 2. Download semua library (Express, Prisma, dll)
+npm install
 
-# Build TypeScript
-npm run build
+# 3. PENTING: Buat file .env baru secara manual, isi dengan:
+# DATABASE_URL="mongodb+srv://..." (Copy dari catatanmu)
 
-# Run production build
-npm start
+# 4. Generate ulang 'kamus' Prisma (Wajib dilakukan setelah clone)
+npx prisma generate
+
+# 5. Nyalakan Server (Port 3000)
+npx ts-node index.ts
+
 ```
 
 ---
@@ -395,29 +386,6 @@ npm start
 
 ---
 
-## 📦 Deployment
-
-### Frontend (Vercel, Netlify, GitHub Pages)
-```bash
-cd whack-a-mole
-npm run build
-# Deploy the `dist/` folder
-```
-
-### Backend (Heroku, Railway, Render, AWS)
-```bash
-cd whack-backend
-npm run build
-npm start
-```
-
-**Environment Variables for Production:**
-- Set `DATABASE_URL` to your production MongoDB Atlas cluster
-- Set `NODE_ENV` to `production`
-- Configure `CORS_ORIGIN` to match your frontend URL
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how you can help:
@@ -427,21 +395,6 @@ Contributions are welcome! Here's how you can help:
 3. Commit your changes (`git commit -m 'Add YourFeature'`)
 4. Push to the branch (`git push origin feature/YourFeature`)
 5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👤 Author
-
-**[Your Name]**
-- 🔗 GitHub: [@yourusername](https://github.com/yourusername)
-- 💼 LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- 📧 Email: your.email@example.com
 
 ---
 
@@ -455,19 +408,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 📞 Support
-
-For issues, questions, or suggestions:
-
-1. **GitHub Issues**: [Create an issue](https://github.com/yourusername/whack-a-robo/issues)
-2. **Email**: your.email@example.com
-3. **Discussions**: Join our community discussions
-
----
-
 <div align="center">
 
-**Built with ❤️ by Security Admins, for Security Admins**
+**Built with ❤️ by Kapten-Kapten IT07**
 
 *Made for the Final Project in Web Programming*
 
